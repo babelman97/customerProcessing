@@ -1,3 +1,108 @@
+# Customer Data Processing System
+
+A multi-threaded customer data processing system implemented in Python, designed to simulate customer arrivals, data processing, and record keeping workflows.
+
+## Features
+
+- Simulates random customer arrivals
+- Multi-threaded parallel processing
+- Real-time status monitoring
+- CSV file recording
+- Automated processing workflow
+
+## System Architecture
+
+The system consists of four main components, each running in a separate thread:
+
+1. **Customer Generator** (generate_customer)
+   - Simulates random customer arrivals
+   - Generates unique customer numbers
+   - Controls total customer count
+
+2. **Data Processor** (read_card)
+   - Processes customer data
+   - Records processing timestamps
+   - Prepares data for storage
+
+3. **Data Storage** (save_to_file)
+   - Writes processed data to CSV file
+   - Ensures data is safely stored
+   - Tracks saving progress
+
+4. **Status Monitor** (show_status)
+   - Displays real-time system status
+   - Monitors processing progress
+   - Shows queue status
+
+## Technical Features
+
+- Uses Python standard library
+- Multi-threaded parallel processing
+- Queue management mechanism
+- Exception handling
+- CSV file operations
+
+## System Requirements
+
+- Python 3.6 or higher
+- No additional packages required (standard library only)
+
+## Usage
+
+1. Direct execution:
+   ```bash
+   python customer_processing.py
+   ```
+
+2. Execution process:
+   - Automatically generates 5 customer records
+   - Displays real-time processing status
+   - Automatically saves to customer_log.csv
+   - Terminates automatically upon completion
+
+3. Output file:
+   - Generates customer_log.csv in execution directory
+   - Contains timestamps and customer numbers
+
+## Monitoring and Management
+
+During execution, the program displays:
+- Number of customers generated
+- Number of customers processed
+- Items pending in queue
+- File writing status
+
+## Notes
+
+1. Program is designed to process a fixed number of customers (default 5)
+2. Customer count can be adjusted via TOTAL_CUSTOMERS variable
+3. Program can be interrupted using Ctrl+C
+4. CSV file is overwritten on each execution
+
+## Program Structure
+
+```
+customer_processing.py
+├── generate_customer()  # Customer Generator
+├── read_card()         # Data Processor
+├── save_to_file()      # Data Storage
+├── show_status()       # Status Monitor
+└── main()             # Main Program Entry
+```
+
+## Contributing
+
+Improvements and bug reports are welcome. You can contribute by:
+1. Submitting Issues
+2. Suggesting Improvements
+3. Submitting Pull Requests
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+---
+
 # 顧客資料處理系統
 
 這是一個使用 Python 多執行緒實現的顧客資料處理系統，用於模擬顧客到達、資料處理和記錄保存的流程。
